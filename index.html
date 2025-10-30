@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clínica Rios – Medicina e Odontologia</title>
   <style>
+    /* ======== ESTILO GERAL ======== */
     body {
       font-family: 'Segoe UI', Roboto, Arial, sans-serif;
       margin: 0;
@@ -14,7 +15,7 @@
     }
     a { text-decoration: none; }
 
-    /* ===== CABEÇALHO ===== */
+    /* ======== CABEÇALHO ======== */
     header {
       display: flex;
       justify-content: space-between;
@@ -63,7 +64,7 @@
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     }
 
-    /* ===== HERO ===== */
+    /* ======== HERO ======== */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -101,7 +102,7 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     }
 
-    /* ===== SEÇÕES DE CARTÕES ===== */
+    /* ======== SEÇÕES DE CARDS ======== */
     section.cards {
       text-align: center;
       padding: 60px 20px;
@@ -123,9 +124,55 @@
       padding: 30px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    .card h3 { margin-bottom: 10px; }
 
-    /* ===== CTA MEIO ===== */
+    /* ======== NOVA SEÇÃO: ISSEC ======== */
+    .issec-section {
+      background: #fffaf3;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .issec-section h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: #0b3d3a;
+    }
+    .issec-section p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #555;
+      font-size: 17px;
+    }
+    .issec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .issec-card {
+      background: #f1fef9;
+      border: 2px solid #00c16a;
+      border-radius: 14px;
+      padding: 25px;
+      color: #0b3d3a;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .issec-card h4 { margin-bottom: 8px; color: #00c16a; }
+
+    .issec-note {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 6px solid #00c16a;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* ======== CTA ======== */
     .cta-section {
       background: #ffffff;
       padding: 60px 20px;
@@ -160,13 +207,12 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
 
-    /* ===== DEPOIMENTOS ===== */
+    /* ======== DEPOIMENTOS ======== */
     .testimonials {
       background: #fff5ee;
       padding: 60px 20px;
       text-align: center;
     }
-    .testimonials h2 { font-size: 28px; margin-bottom: 30px; }
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -182,46 +228,33 @@
       font-size: 16px;
       color: #333;
     }
-    .testimonial strong { display: block; margin-top: 10px; }
 
-    /* ===== AGENDAMENTO ===== */
-    .steps {
-      background: #fffaf5;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .steps h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-    .step-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .step {
-      background: #f9fdfc;
-      border-radius: 14px;
-      padding: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .step-number {
-      width: 40px;
-      height: 40px;
-      background: #00c16a;
+    /* ======== BOTÃO WHATSAPP FIXO ======== */
+    .whatsapp-float {
+      position: fixed;
+      width: 65px;
+      height: 65px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
       color: #fff;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      margin: 0 auto 10px;
+      text-align: center;
+      font-size: 36px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+      box-shadow: 2px 4px 14px rgba(0,0,0,0.35);
+    }
+    .whatsapp-icon {
+      margin-top: 14px;
+      display: inline-block;
     }
 
-    /* ===== RODAPÉ ===== */
+    /* ======== RODAPÉ ======== */
     footer {
       background: #0b3d3a;
       color: #fff;
@@ -255,7 +288,6 @@
     footer h3 { color: #84dcc6; margin-bottom: 10px; }
     footer a { color: #84dcc6; }
     footer p { margin: 5px 0; font-size: 15px; }
-
     footer .copyright {
       text-align: center;
       width: 100%;
@@ -267,7 +299,6 @@
     @media (max-width: 768px) {
       header { flex-direction: column; gap: 10px; }
       .hero h1 { font-size: 32px; }
-      .cta-section h2 { font-size: 24px; }
       footer { flex-direction: column; text-align: center; }
     }
   </style>
@@ -294,18 +325,36 @@
     <a href="https://wa.me/5585997725842" target="_blank" class="hero-btn">📅 Agendar Consulta Agora</a>
   </section>
 
-  <!-- ===== SEÇÕES DE CARTÕES ===== -->
+  <!-- ===== POR QUE ESCOLHER ===== -->
   <section class="cards">
-    <h2>Por que escolher uma Clínica Rios?</h2>
+    <h2>Por que escolher a Clínica Rios?</h2>
     <div class="card-grid">
-      <div class="card"><h3>Ambiente Acolhedor</h3><p>Espaço moderno e profissional para seu conforto</p></div>
-      <div class="card"><h3>Plano ISSEC</h3><p>Diversos procedimentos cobertos pelo seu plano</p></div>
-      <div class="card"><h3>Alta Qualidade</h3><p>Tratamentos particulares com excelência</p></div>
-      <div class="card"><h3>Acesso</h3><p>Localização privilegiada na Av. Bezerra de Menezes</p></div>
+      <div class="card"><h3>Ambiente Acolhedor</h3><p>Espaço moderno e confortável para seu bem-estar.</p></div>
+      <div class="card"><h3>Plano ISSEC</h3><p>Procedimentos cobertos e atendimento humanizado.</p></div>
+      <div class="card"><h3>Alta Qualidade</h3><p>Profissionais capacitados e materiais de excelência.</p></div>
+      <div class="card"><h3>Acesso</h3><p>Localização privilegiada na Av. Bezerra de Menezes.</p></div>
     </div>
   </section>
 
-  <!-- ===== CTA MEIO ===== -->
+  <!-- ===== SEÇÃO ISSEC ===== -->
+  <section class="issec-section">
+    <h2>Procedimentos Autorizados pelo ISSEC</h2>
+    <p>Atendemos pelo plano ISSEC, oferecendo cuidados odontológicos com qualidade e responsabilidade. Veja abaixo o que é autorizado e o que é particular:</p>
+
+    <div class="issec-grid">
+      <div class="issec-card"><h4>✔ Consulta Odontológica</h4><p>Autorizada a cada 6 meses.</p></div>
+      <div class="issec-card"><h4>✔ Limpeza (Profilaxia)</h4><p>Autorizada a cada 6 meses.</p></div>
+      <div class="issec-card"><h4>✔ Restauração</h4><p>Tratamento de cáries e dentes danificados.</p></div>
+      <div class="issec-card"><h4>✔ Raio-X Periapical</h4><p>Diagnóstico preciso por imagem.</p></div>
+      <div class="issec-card"><h4>✔ Tratamento de Canal</h4><p>Endodontia autorizada conforme avaliação.</p></div>
+    </div>
+
+    <div class="issec-note">
+      ⚠️ Outros procedimentos como <strong>facetas, clareamento, placa de bruxismo, tratamento ortodôntico, implantes e próteses</strong> são realizados de forma <strong>particular</strong>.
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
   <section class="cta-section">
     <h2>Quer cuidar da sua saúde bucal com quem entende de verdade?</h2>
     <p>Agende sua consulta agora mesmo com a <strong>Clínica Rios</strong> e garanta o melhor atendimento em Fortaleza.</p>
@@ -316,21 +365,16 @@
   <section class="testimonials">
     <h2>O que nossos pacientes dizem</h2>
     <div class="testimonial-grid">
-      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Excelente atendimento! Profissionais muito simpáticos e atenciosos."<strong>— Maria Silva</strong></div>
-      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Sou paciente há mais de dois anos e sempre fui bem atendido."<strong>— João Santos</strong></div>
-      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Ambiente limpo e moderno. O plano ISSEC facilita o acesso aos serviços."<strong>— Ana Costa</strong></div>
+      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Excelente atendimento! Profissionais muito simpáticos e atenciosos."<br><strong>— Maria Silva</strong></div>
+      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Sou paciente há mais de dois anos e sempre fui bem atendido."<br><strong>— João Santos</strong></div>
+      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Ambiente limpo e moderno. O plano ISSEC facilita o acesso aos serviços."<br><strong>— Ana Costa</strong></div>
     </div>
   </section>
 
-  <!-- ===== AGENDAMENTO ===== -->
-  <section class="steps">
-    <h2>Como funciona o agendamento</h2>
-    <div class="step-grid">
-      <div class="step"><div class="step-number">1</div><h3>Entre em contato</h3><p>Clique no botão WhatsApp e envie "Agendar consulta"</p></div>
-      <div class="step"><div class="step-number">2</div><h3>Informe seu plano</h3><p>Diga se possui plano ISSEC ou deseja atendimento particular</p></div>
-      <div class="step"><div class="step-number">3</div><h3>Confirme o horário</h3><p>Nossa equipe confirmará dados e horários disponíveis</p></div>
-    </div>
-  </section>
+  <!-- ===== BOTÃO FLUTUANTE DO WHATSAPP ===== -->
+  <a href="https://wa.me/5585997725842" class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
+    <span class="whatsapp-icon">💬</span>
+  </a>
 
   <!-- ===== RODAPÉ ===== -->
   <footer>
