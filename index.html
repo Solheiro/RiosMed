@@ -3,436 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clínica Rios – Medicina e Odontologia</title>
+  <title>RiosMed | Odontologia Particular e ISSEC em Fortaleza</title>
+  <meta name="description" content="Clínica odontológica em Fortaleza. Atendimento ISSEC e particular. Implantes, próteses, ortodontia, clareamento e urgências. Agende pelo WhatsApp." />
+
   <style>
-    /* ======== ESTILO GERAL ======== */
-    body {
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      margin: 0;
-      background: #f9fdfc;
-      color: #0b3d3a;
-      line-height: 1.6;
+    :root{
+      --primary:#0f2a44;
+      --secondary:#e6f0f8;
+      --accent:#1aa3a3;
+      --text:#2b2b2b;
     }
-    a { text-decoration: none; }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+    body{color:var(--text);background:#fff;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
 
-    /* ======== CABEÇALHO ======== */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    header{
+      background:linear-gradient(135deg,var(--primary),#143a5e);
+      color:#fff;
+      padding:60px 20px;
+      text-align:center;
     }
-    header h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #0b3d3a;
-      margin: 0;
-    }
-    .btn-whatsapp {
-      background: #00c16a;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 10px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-    }
-    .btn-whatsapp:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    header h1{font-size:2rem;margin-bottom:15px;}
+    header p{font-size:1.1rem;max-width:700px;margin:0 auto 25px;}
+    .cta{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:15px 28px;
+      border-radius:30px;
+      font-size:1rem;
+      font-weight:bold;
     }
 
-    /* ======== HERO ======== */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(180deg, #eafaf6 0%, #f9fdfc 100%);
-    }
-    .hero span {
-      background: #e6f9f3;
-      color: #00c16a;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 15px;
-    }
-    .hero h1 {
-      font-size: 42px;
-      margin-top: 20px;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #444;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-    .hero .hero-btn {
-      background: #00c16a;
-      color: #fff;
-      padding: 16px 32px;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-    .hero .hero-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    section{padding:50px 20px;max-width:1000px;margin:0 auto;}
+    section h2{text-align:center;margin-bottom:30px;color:var(--primary);}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
     }
 
-    /* ======== SEÇÕES DE CARDS ======== */
-    section.cards {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    section.cards h2 {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .card {
-      background: #f9fdfc;
-      border-radius: 14px;
-      padding: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    .card{
+      background:var(--secondary);
+      padding:25px;
+      border-radius:12px;
     }
 
-    /* ======== SEÇÃO ISSEC ======== */
-    .issec-section {
-      background: #fffaf3;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .issec-section h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-      color: #0b3d3a;
-    }
-    .issec-section p {
-      max-width: 800px;
-      margin: 0 auto 30px;
-      color: #555;
-      font-size: 17px;
-    }
-    .issec-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .issec-card {
-      background: #f1fef9;
-      border: 2px solid #00c16a;
-      border-radius: 14px;
-      padding: 25px;
-      color: #0b3d3a;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .issec-card h4 { margin-bottom: 8px; color: #00c16a; }
+    .card h3{margin-bottom:10px;color:var(--primary);}
 
-    .issec-note {
-      margin-top: 40px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      border-left: 6px solid #00c16a;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 16px;
-      color: #333;
+    .highlight{
+      background:#f7fbff;
+      border-left:5px solid var(--accent);
+      padding:25px;
+      border-radius:8px;
+      margin:30px 0;
     }
 
-    /* ======== NOVA SEÇÃO: PROCEDIMENTOS PARTICULARES ======== */
-    .particular-section {
-      background: #f6fffc;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .particular-section h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-      color: #0b3d3a;
-    }
-    .particular-section p {
-      max-width: 800px;
-      margin: 0 auto 30px;
-      color: #555;
-      font-size: 17px;
-    }
-    .particular-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .particular-card {
-      background: #fff;
-      border: 2px solid #ffc6a0;
-      border-radius: 14px;
-      padding: 25px;
-      color: #0b3d3a;
-      box-shadow: 0 3px 12px rgba(255,160,80,0.1);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .particular-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(255,160,80,0.2);
-    }
-    .particular-card h4 {
-      margin-bottom: 8px;
-      color: #e67e22;
-      font-weight: 700;
+    .whatsapp-fixed{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25d366;
+      color:#fff;
+      padding:15px 18px;
+      border-radius:50px;
+      font-weight:bold;
+      box-shadow:0 4px 10px rgba(0,0,0,.2);
+      z-index:999;
     }
 
-    .particular-note {
-      margin-top: 40px;
-      background: #fffefb;
-      padding: 20px;
-      border-radius: 10px;
-      border-left: 6px solid #e67e22;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 16px;
-      color: #333;
+    footer{
+      background:var(--primary);
+      color:#fff;
+      padding:40px 20px;
+      text-align:center;
     }
-
-    /* ======== CTA ======== */
-    .cta-section {
-      background: #ffffff;
-      padding: 60px 20px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      border-radius: 16px;
-      margin: 60px auto;
-      max-width: 900px;
-    }
-    .cta-section h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-    }
-    .cta-section p {
-      font-size: 18px;
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto 28px;
-    }
-    .cta-section a {
-      background: #00c16a;
-      color: #fff;
-      font-size: 18px;
-      padding: 16px 32px;
-      border-radius: 12px;
-      font-weight: 600;
-      display: inline-block;
-      transition: 0.2s;
-    }
-    .cta-section a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-
-    /* ======== DEPOIMENTOS ======== */
-    .testimonials {
-      background: #fff5ee;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .testimonial {
-      background: #fff;
-      border-radius: 14px;
-      padding: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      font-size: 16px;
-      color: #333;
-    }
-
-    /* ======== BOTÃO WHATSAPP FIXO ======== */
-    .whatsapp-float {
-      position: fixed;
-      width: 65px;
-      height: 65px;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 36px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      z-index: 999;
-      transition: 0.2s;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.05);
-      box-shadow: 2px 4px 14px rgba(0,0,0,0.35);
-    }
-    .whatsapp-icon {
-      margin-top: 14px;
-      display: inline-block;
-    }
-
-    /* ======== RODAPÉ ======== */
-    footer {
-      background: #0b3d3a;
-      color: #fff;
-      text-align: center;
-      padding: 50px 20px;
-    }
-    footer h3 { color: #84dcc6; }
-    footer a { color: #84dcc6; }
-    footer .copyright {
-      margin-top: 20px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-      header { flex-direction: column; gap: 10px; }
-      .hero h1 { font-size: 32px; }
-    }
+    footer p{margin-bottom:10px;font-size:.95rem;}
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10775507666">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-10775507666');
-</script>
 </head>
-
 <body>
 
-  <!-- ===== CABEÇALHO ===== -->
-  <header>
-    <h1>Clínica Rios</h1>
-    <a href="https://wa.me/5585997725842" target="_blank" class="btn-whatsapp">💬 Agendar via WhatsApp</a>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10775507666">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<header>
+  <h1>Seu sorriso influencia sua vida mais do que você imagina</h1>
+  <p>
+    Atendimento odontológico em Fortaleza para quem busca conforto, segurança e soluções reais.
+    Trabalhamos com ISSEC e atendimento particular.
+  </p>
+  <a class="cta" href="https://wa.me/5585997725842" target="_blank">Agendar pelo WhatsApp</a>
+</header>
 
-  gtag('config', 'AW-10775507666');
-</script></header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <span>ATENDEMOS PELO PLANO ISSEC</span>
-    <h1>Clínica Rios – Medicina e Odontologia</h1>
-    <p>Cuidado profissional com sua saúde bucal em Fortaleza. Atendimento pelo plano ISSEC e particular.</p>
-    <a href="https://wa.me/5585997725842" target="_blank" class="hero-btn">📅 Agendar Consulta Agora</a>
-  </section>
-
-  <!-- ===== POR QUE ESCOLHER ===== -->
-  <section class="cards">
-    <h2>Por que escolher a Clínica Rios?</h2>
-    <div class="card-grid">
-      <div class="card"><h3>Ambiente Acolhedor</h3><p>Espaço moderno e confortável para seu bem-estar.</p></div>
-      <div class="card"><h3>Plano ISSEC</h3><p>Procedimentos cobertos e atendimento humanizado.</p></div>
-      <div class="card"><h3>Alta Qualidade</h3><p>Profissionais capacitados e materiais de excelência.</p></div>
-      <div class="card"><h3>Acesso</h3><p>Localização privilegiada na Av. Bezerra de Menezes.</p></div>
+<section>
+  <h2>Você sente que algo no seu sorriso te limita?</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Dor ou desconforto</h3>
+      <p>Evitar certos alimentos ou conviver com dor não é normal. Nós tratamos a causa, não só o sintoma.</p>
     </div>
-  </section>
-
-  <!-- ===== SEÇÃO ISSEC ===== -->
-  <section class="issec-section">
-    <h2>Procedimentos Autorizados pelo ISSEC</h2>
-    <p>Atendemos pelo plano ISSEC, oferecendo cuidados odontológicos com qualidade e responsabilidade. Veja abaixo o que é autorizado e o que é particular:</p>
-
-    <div class="issec-grid">
-      <div class="issec-card"><h4>✔ Consulta Odontológica</h4><p>Autorizada a cada 6 meses.</p></div>
-      <div class="issec-card"><h4>✔ Limpeza (Profilaxia)</h4><p>Autorizada a cada 6 meses.</p></div>
-      <div class="issec-card"><h4>✔ Restauração</h4><p>Tratamento de cáries e dentes danificados.</p></div>
-      <div class="issec-card"><h4>✔ Raio-X Periapical</h4><p>Diagnóstico preciso por imagem.</p></div>
-      <div class="issec-card"><h4>✔ Tratamento de Canal</h4><p>Endodontia autorizada conforme avaliação.</p></div>
+    <div class="card">
+      <h3>Vergonha ao sorrir</h3>
+      <p>Dentes escurecidos, falhas ou desalinhamento afetam autoestima e relações.</p>
     </div>
-
-    <div class="issec-note">
-      ⚠️ Outros procedimentos estéticos e avançados são realizados de forma <strong>particular</strong> e estão listados abaixo.
+    <div class="card">
+      <h3>Dificuldade para mastigar</h3>
+      <p>Próteses e implantes devolvem função, segurança e prazer ao comer.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== SEÇÃO PARTICULAR ===== -->
-  <section class="particular-section">
-    <h2>Procedimentos Particulares</h2>
-    <p>Cuidar do sorriso é mais do que estética — é autoestima, presença e confiança. Conheça nossos tratamentos particulares que transformam o seu visual e o seu bem-estar:</p>
+<section>
+  <h2>Soluções para cada fase da sua vida</h2>
+  <div class="grid">
+    <div class="card"><h3>Implantes dentários</h3><p>Reposição segura e duradoura para dentes perdidos.</p></div>
+    <div class="card"><h3>Próteses</h3><p>Recupere função e estética com conforto.</p></div>
+    <div class="card"><h3>Ortodontia</h3><p>Alinhamento que melhora sorriso e saúde bucal.</p></div>
+    <div class="card"><h3>Clareamento</h3><p>Caseiro ou em consultório, de forma segura.</p></div>
+    <div class="card"><h3>Placa para bruxismo</h3><p>Proteção contra dores, desgaste e tensão.</p></div>
+    <div class="card"><h3>Atendimento ISSEC</h3><p>Tratamentos conforme cobertura do convênio.</p></div>
+  </div>
+</section>
 
-    <div class="particular-grid">
-      <div class="particular-card"><h4>✨ Facetas de Porcelana</h4><p>Perfeitas para corrigir imperfeições e conquistar um sorriso harmônico e natural.</p></div>
-      <div class="particular-card"><h4>💎 Clareamento Dental</h4><p>Ilumine seu sorriso com técnicas seguras e resultados de cinema.</p></div>
-      <div class="particular-card"><h4>😴 Placa de Bruxismo</h4><p>Protege seus dentes e alivia dores causadas pelo apertamento noturno.</p></div>
-      <div class="particular-card"><h4>🦷 Tratamento Ortodôntico</h4><p>Alinhe seus dentes com conforto e tecnologia moderna.</p></div>
-      <div class="particular-card"><h4>🪄 Implantes Dentários</h4><p>Restaure o sorriso com naturalidade e segurança.</p></div>
-      <div class="particular-card"><h4>👑 Prótese Dental</h4><p>Recupere função e estética com soluções personalizadas.</p></div>
-    </div>
+<section class="highlight">
+  <h2>Vai viajar? Carnaval? Eventos importantes?</h2>
+  <p>
+    Seu sorriso vai com você. Antes de adiar mais uma vez, resolva agora.
+    Avaliação clara, atendimento humano e orientação honesta.
+  </p>
+  <br />
+  <a class="cta" href="https://wa.me/5585997725842" target="_blank">Falar com a clínica</a>
+</section>
 
-    <div class="particular-note">
-      🌟 Agende uma Consulta e descubra o tratamento ideal para o seu sorriso.  
-      Cada detalhe é pensado para realçar o que há de melhor em você!
-    </div>
-  </section>
+<footer>
+  <p><strong>RiosMed – Clínica Odontológica</strong></p>
+  <p>📍 Fortaleza – CE</p>
+  <p>📞 (85) 99772-5842</p>
+  <p>⏰ Segunda a sexta • 8h30 às 17h30</p>
+</footer>
 
-  <!-- ===== CTA ===== -->
-  <section class="cta-section">
-    <h2>Quer cuidar da sua saúde bucal com quem entende de verdade?</h2>
-    <p>Agende sua consulta agora mesmo com a <strong>Clínica Rios</strong> e garanta o melhor atendimento em Fortaleza.</p>
-    <a href="https://wa.me/5585997725842" target="_blank">💬 Falar com a Clínica pelo WhatsApp</a>
-  </section>
-
-  <!-- ===== DEPOIMENTOS ===== -->
-  <section class="testimonials">
-    <h2>O que nossos pacientes dizem</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Excelente atendimento! Profissionais muito simpáticos e atenciosos."<br><strong>— Maria Silva</strong></div>
-      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Sou paciente há mais de dois anos e sempre fui bem atendido."<br><strong>— João Santos</strong></div>
-      <div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>"Ambiente limpo e moderno. O plano ISSEC facilita o acesso aos serviços."<br><strong>— Ana Costa</strong></div>
-    </div>
-  </section>
-
-  <!-- ===== BOTÃO FLUTUANTE DO WHATSAPP ===== -->
-  <a href="https://wa.me/5585997725842" class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
-    <span class="whatsapp-icon">💬</span>
-  </a>
-
-  <!-- ===== RODAPÉ ===== -->
-  <footer>
-    <h3>Clínica Rios – Medicina e Odontologia</h3>
-    <p>📍 Av. Bezerra de Menezes 2207, Fortaleza-CE</p>
-    <p>📞 (85) 9 9772-5842</p>
-    <p>Atendemos pelo ISSEC e também realizamos atendimentos particulares.</p>
-    <div class="copyright">
-      © 2025 Clínica Rios – Todos os direitos reservados.
-    </div>
-  </footer>
+<a class="whatsapp-fixed" href="https://wa.me/5585997725842" target="_blank">WhatsApp</a>
 
 </body>
 </html>
