@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clínica RiosMed | Odontologia em Fortaleza</title>
+  <meta charset="UTF-8">
+  <title>OdontoRios | Clínica Odontológica em Fortaleza</title>
 
-  <meta name="description" content="Clínica Odontológica em Fortaleza. Atendimento Particular e ISSEC. Implantes, Próteses, Ortodontia, Clareamento e Placa de Bruxismo. Agende pelo WhatsApp." />
+  <meta name="description" content="OdontoRios - Clínica odontológica em Fortaleza. Implantes, próteses, ortodontia, clareamento e atendimento humanizado. Agende pelo WhatsApp.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- SEO Local -->
+  <meta name="geo.region" content="BR-CE">
+  <meta name="geo.placename" content="Fortaleza">
+  <meta name="geo.position" content="-3.7319;-38.5267">
+
+  <!-- Estilo -->
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
+      background-color: #ffffff;
       color: #333;
-      line-height: 1.6;
     }
 
     header {
-      background: #f7f7f7;
-      padding: 30px 20px;
+      background-color: #8b4a4a;
+      color: white;
+      padding: 20px;
       text-align: center;
     }
 
     header h1 {
-      margin-bottom: 10px;
+      margin: 0;
       font-size: 26px;
     }
 
     header p {
-      max-width: 800px;
-      margin: 0 auto 20px;
+      margin-top: 8px;
       font-size: 16px;
     }
 
-    .cta {
-      display: inline-block;
-      background: #25d366;
-      color: #fff;
-      padding: 14px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+    .hero {
+      text-align: center;
+      padding: 30px 15px;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
+    .hero img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 8px;
+    }
+
+    .cta {
+      background-color: #f5f5f5;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .cta a {
+      background-color: #25d366;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .info {
+      padding: 30px 20px;
+      max-width: 900px;
       margin: auto;
     }
 
-    section h2 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      border: 1px solid #eaeaea;
-      padding: 20px;
-      border-radius: 8px;
-      background: #fafafa;
+    .info h3 {
+      margin-bottom: 10px;
     }
 
     footer {
-      background: #f1f1f1;
-      padding: 30px 20px;
+      background-color: #8b4a4a;
+      color: white;
       text-align: center;
+      padding: 20px;
       font-size: 14px;
-    }
-
-    .whatsapp-fixo {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: #fff;
-      padding: 15px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -91,94 +98,43 @@
 <body>
 
 <header>
-  <h1>Clínica Odontológica em Fortaleza</h1>
-  <p>
-    Atendimento <strong>Particular e ISSEC</strong><br>
-    Implantes • Próteses • Ortodontia • Clareamento • Placa de Bruxismo
-  </p>
-
-  <a class="cta" href="https://wa.me/5585997725842" target="_blank">
-    Agendar avaliação pelo WhatsApp
-  </a>
+  <h1>OdontoRios</h1>
+  <p>Cuidando do seu sorriso com respeito, atenção e confiança</p>
 </header>
 
-<section id="particular">
-  <h2>Atendimento Particular</h2>
-  <p>
-    Se você sente dificuldade para comer, sorrir ou se incomoda com a estética do seu sorriso,
-    nossos tratamentos particulares são pensados para devolver conforto, segurança e autoestima,
-    sempre com avaliação individualizada.
-  </p>
+<section class="hero">
+  <img src="fachada.jpg" alt="Fachada da Clínica OdontoRios em Fortaleza">
+</section>
 
-  <div class="cards">
-    <div class="card">
-      <strong>Implante Dentário</strong>
-      <p>Indicado para quem perdeu um ou mais dentes e deseja voltar a mastigar com segurança.</p>
-    </div>
+<section class="cta">
+  <h2>Sorrir bem muda tudo</h2>
+  <p>Se você sente dificuldade para sorrir, comer ou se sentir confiante, estamos aqui para ajudar.</p>
 
-    <div class="card">
-      <strong>Prótese Dentária</strong>
-      <p>Soluções para devolver função e estética de forma natural e confortável.</p>
-    </div>
-
-    <div class="card">
-      <strong>Tratamento Ortodôntico</strong>
-      <p>Correção do alinhamento dental com acompanhamento profissional.</p>
-    </div>
-
-    <div class="card">
-      <strong>Clareamento Dental</strong>
-      <p>Clareamento caseiro ou em consultório, respeitando a saúde dos dentes.</p>
-    </div>
-
-    <div class="card">
-      <strong>Placa para Bruxismo</strong>
-      <p>Proteção para quem sofre com apertamento ou desgaste dos dentes.</p>
-    </div>
-  </div>
-
-  <br>
-  <a class="cta" href="https://wa.me/5585997725842" target="_blank">
-    Falar com a clínica pelo WhatsApp
+  <a href="https://wa.me/5585997725284?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20na%20OdontoRios" target="_blank">
+    Agendar pelo WhatsApp
   </a>
 </section>
 
-<section id="issec">
-  <h2>Atendimento pelo ISSEC</h2>
+<section class="info">
+  <h3>Tratamentos particulares</h3>
   <p>
-    A Clínica RiosMed também realiza atendimento odontológico pelo convênio ISSEC,
-    conforme as regras e coberturas do plano.
+    Implantes dentários, próteses, tratamento ortodôntico, clareamento caseiro e de consultório,
+    placas para bruxismo e atendimento odontológico completo.
   </p>
 
+  <h3>Onde estamos</h3>
   <p>
-    Para saber quais procedimentos estão disponíveis pelo ISSEC e como funciona o agendamento,
-    entre em contato com nossa equipe.
-  </p>
-
-  <a class="cta" href="https://wa.me/5585997725842" target="_blank">
-    Consultar atendimento ISSEC
-  </a>
-</section>
-
-<section>
-  <h2>Informações da Clínica</h2>
-  <p>
-    📍 <strong>Endereço:</strong> Fortaleza – CE<br>
-    📞 <strong>Telefone / WhatsApp:</strong> (85) 99772-5842<br>
-    🕒 <strong>Horário de atendimento:</strong> Segunda a sexta, das 8h30 às 17h30
+    📍 Endereço: Rua Exemplo, nº 2207 – Fortaleza / CE  
+    <br>
+    📞 Telefone: (85) 99772-5284  
+    <br>
+    🕘 Atendimento: Segunda a sexta, das 8h30 às 17h30
   </p>
 </section>
 
 <footer>
-  <p>
-    Clínica RiosMed – Odontologia em Fortaleza<br>
-    Atendimento humanizado, responsável e focado na sua saúde bucal.
-  </p>
+  © 2026 – OdontoRios | Clínica Odontológica em Fortaleza
 </footer>
-
-<a class="whatsapp-fixo" href="https://wa.me/5585997725842" target="_blank">
-  WhatsApp
-</a>
 
 </body>
 </html>
